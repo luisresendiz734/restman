@@ -1,7 +1,7 @@
 import { FormEventHandler, ChangeEventHandler } from 'react';
 import { useRequest } from '../../context/request';
 
-const UrlForm = () => {
+const Url = () => {
     const { request, dispatchRequest } = useRequest();
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
@@ -24,8 +24,12 @@ const UrlForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <select value={request.method} onChange={handleMethodChange}>
+        <form onSubmit={handleSubmit} className="flex items-center mt-6 w-full">
+            <select
+                className="rounded border py-1 px-2 font-semibold text-gray-800 h-8 outline-none"
+                value={request.method}
+                onChange={handleMethodChange}
+            >
                 <option value="GET">GET</option>
                 <option value="POST">POST</option>
                 <option value="PUT">PUT</option>
@@ -33,15 +37,20 @@ const UrlForm = () => {
                 <option value="DELETE">DELETE</option>
             </select>
             <input
-                className="border w-1/2"
+                className="outline-none flex-1 ml-2 rounded-l border py-1 px-3 text-gray-800 text-sm tracking-wide font-semibold"
                 type="text"
                 placeholder="URL"
                 value={request.url}
                 onChange={handleUrlChange}
             />
-            <button type="submit">Enviar</button>
+            <button
+                className="border border-blue-500 bg-blue-500 text-white font-bold text-sm py-1 px-3 rounded-r"
+                type="submit"
+            >
+                Enviar
+            </button>
         </form>
     );
 };
 
-export default UrlForm;
+export default Url;
