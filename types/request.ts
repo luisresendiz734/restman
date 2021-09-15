@@ -41,6 +41,14 @@ interface IRequestParamAction {
     payload: IParam;
 }
 
-type RequestAction = IRequestBasicAction | IRequestParamAction;
+interface IRequestBodyAction {
+    type: 'update-body';
+    payload: string;
+}
+
+type RequestAction =
+    | IRequestBasicAction
+    | IRequestParamAction
+    | IRequestBodyAction;
 
 export type { Request, RequestAction, IParam };

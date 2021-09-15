@@ -42,6 +42,10 @@ const reducer: Reducer<Request, RequestAction> = (state, action) => {
         };
     }
 
+    if (action.type === 'update-body') {
+        return { ...state, body: JSON.parse(action.payload) };
+    }
+
     return state;
 };
 
