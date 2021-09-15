@@ -18,6 +18,7 @@ interface IBearerAuth {
 type AuthType = INoAuth | IBasicAuth | IBearerAuth;
 
 interface IParam {
+    id: string;
     param: string;
     value: string;
 }

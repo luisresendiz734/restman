@@ -1,9 +1,9 @@
+import { useState } from 'react';
+
 const Body = () => {
-    return (
-        <div>
-            <h1>Body</h1>
-        </div>
-    );
+    const [state, setState] = useState('');
+
+    return <div></div>;
 };
 
 export default Body;

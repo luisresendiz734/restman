@@ -25,9 +25,7 @@ const reducer: Reducer<Request, RequestAction> = (state, action) => {
     if (action.type === 'remove-param') {
         return {
             ...state,
-            params: state.params.filter(
-                (p) => p.param !== action.payload.param
-            ),
+            params: state.params.filter((p) => p.id !== action.payload.id),
         };
     }
 
@@ -35,7 +33,7 @@ const reducer: Reducer<Request, RequestAction> = (state, action) => {
         return {
             ...state,
             params: state.params.map((pay) => {
-                if (pay.param === action.payload.param) {
+                if (pay.id === action.payload.id) {
                     return action.payload;
                 }
 
