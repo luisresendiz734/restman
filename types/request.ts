@@ -23,12 +23,19 @@ interface IParam {
     value: string;
 }
 
+interface IHeader {
+    id: string;
+    header: string;
+    value: string;
+}
+
 type Request = {
     method: string;
     url: string;
     params: Array<IParam>;
     body: any;
     authorization: AuthType;
+    headers: Array<IHeader>;
 };
 
 interface IRequestBasicAction {
@@ -46,9 +53,21 @@ interface IRequestBodyAction {
     payload: string;
 }
 
+interface IRequestAuthAction {
+    type: 'update-auth';
+    payload: AuthType;
+}
+
+interface IRequestHeadersAction {
+    type: 'add-header' | 'remove-header' | 'update-header';
+    payload: IHeader;
+}
+
 type RequestAction =
     | IRequestBasicAction
     | IRequestParamAction
-    | IRequestBodyAction;
+    | IRequestBodyAction
+    | IRequestAuthAction
+    | IRequestHeadersAction;
 
-export type { Request, RequestAction, IParam };
+export type { Request, RequestAction, IParam, IHeader };

@@ -14,13 +14,13 @@ const Params = () => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="border h-full w-full flex flex-col">
             {request.params.length > 0 &&
                 request.params.map((param) => (
                     <Param key={param.id} param={param} />
                 ))}
             <button
-                className="border-b border-l border-r bg-gray-100 hover:bg-gray-200 py-1 flex items-center justify-center text-sm"
+                className="border-b bg-gray-100 hover:bg-gray-200 py-1 flex items-center justify-center text-sm"
                 onClick={handleAddParam}
             >
                 <RiAddFill />

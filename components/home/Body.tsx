@@ -21,7 +21,7 @@ const Body = () => {
     }, [markers]);
 
     return (
-        <div className="grid grid-cols-1 grid-rows-1 h-full overflow-y-scroll overflow-x-hidden">
+        <div className="border grid grid-cols-1 grid-rows-1 h-full w-full">
             <Editor
                 className="h-full"
                 value={state}

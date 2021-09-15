@@ -6,7 +6,7 @@ import Params from './Params';
 
 const Option: FC<{ option: number }> = ({ option }) => {
     return (
-        <div className="border-t border-b my-2 h-56 overflow-y-scroll">
+        <div className="my-2 h-56 overflow-y-scroll overflow-x-hidden">
             {option === 1 && <Params />}
             {option === 2 && <Body />}
             {option === 3 && <Headers />}
